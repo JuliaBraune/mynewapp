@@ -1,3 +1,51 @@
 // Place all the styles related to the static_pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+
+body {
+	padding-top: 70px;
+	background-color: rgba(252, 219, 26, 0.46);
+}
+
+/**** Footer ****/
+
+.inline {
+	padding: 0;
+	margin: 0;
+}
+.social {
+	text-align: center;
+}
+.social li {
+	list-style: none;
+	text-align: center;
+	display: inline-block;
+	font-size: 1.5em;
+	margin: 0 2%;
+	padding-top: 0.5%;
+}
+/*.inline a {
+	color: black;
+	text-decoration: none;
+}
+.inline a:hover {
+	color: #fcda19;
+}*/
+
+/**** Typography ****/
+
+h1,
+h2 {
+	font-family: Helvetica, Helvetica Neue, Arial, sans-serif;
+	color: black;
+	text-align: center;
+}
+
+p {
+	font-family: Helvetica, Helvetica Neue, Arial, sans-serif;
+	font-size: 0.5em;
+	color: black;
+}
+
