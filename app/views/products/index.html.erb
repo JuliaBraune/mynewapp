@@ -13,6 +13,7 @@
           <%= image_tag(product.image_url, class: "img-responsive") %>
           <p style="text-align: center; font-weight: bold; font-size: 1em"><%= product.price %></p>
           <p><%= product.colour %></p>
+          <%= @test_variable %>
           <ul style="list-style: none">            
             <li><%= link_to 'Show', product %></li>
             <li><%= link_to 'Edit', edit_product_path(product) %></li>
