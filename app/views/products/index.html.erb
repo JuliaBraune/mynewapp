@@ -6,7 +6,7 @@
 
   <div class="container-fluid">
     <div class="row">
-      <% @products.each do |product| %> <!-- soll nicht als html ausgegeben werden, sondern nur ausgeführt -->
+      <% @products.each do |product| %> <!-- soll nicht als html ausgegeben werden, sondern nur ausgeführt, deshalb % ohne = -->
         <div class="col-sm-6">
           <h2><%= product.name %></h2>
           <p style="text-align: center; font-size: 2em; line-height: 1em"><%= product.description %></p>
