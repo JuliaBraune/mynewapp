@@ -1,2 +1,26 @@
 <h1>Get in touch!</h1>
 <p style="text-align:center">... with Polycarp Records and the team behind the label!</p>
+
+<br>
+
+<%= flash[:notice] %>
+
+<%= form_tag("/static_pages/thank_you") do %>
+<div class="row">
+  <div class="col-sm-12 col-md-6 col-md-offset-3">
+    <div class="form-group">
+      <%= label_tag :name %> 
+      <%= text_field_tag :name, nil, class: "form-control", placeholder: "Enter Name" %>
+    </div>      
+    <div class="form-group">
+      <%= label_tag :email, "Email Address" %>
+      <%= text_field_tag :email, nil, class: "form-control", placeholder: "Enter Email" %>
+    </div>
+    <div class="form-group">
+      <%= label_tag :message %>
+      <%= text_area_tag :message, nil, class: "form-control", placeholder: "Enter Message" %>
+    </div>  
+    <%= submit_tag "Send", style: "background-color: white" %>   
+    <% end %>
+  </div>
+</div>

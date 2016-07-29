@@ -3,7 +3,7 @@
   <head>
 
 
-    <title>Mynewapp</title>
+    <title>Polycarp Records</title>
 
     <!-- Link to bootstrap stylesheet -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
@@ -39,9 +39,10 @@
         <div class="collapse navbar-collapse" id="Navigationsleiste">
           <%= form_tag("/products", method: "get", class: "navbar-form navbar-left") do %>
              <%= label_tag(:q, "")%>
-             <%= text_field_tag :q, params[:q], placeholder: "Search for", class: "form-control"%>
+             <%= text_field_tag :q, nil, placeholder: "Search for", class: "form-control"%>
              <%= submit_tag("Search", class: "btn btn-default", style: "color: rgba(252, 219, 26, 0.46)")%>
           <% end %>
+
 <!-- 
           <form class="navbar-form navbar-left">
             <div class="form-group">
