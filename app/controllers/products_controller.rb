@@ -4,8 +4,22 @@ class ProductsController < ApplicationController
   # GET /products
   # GET /products.json
   def index
-    @products = Product.all
+    if params[:q]
+      search_term = params[:q] # return our filtered list here
+      if Rails.env.development?
+        @products = Product.where("name LIKE ?", "%#{search_term}%") 
+        # where method, um übereinstimmende produkte zu finden; 
+        # LIKE erlaubt, dass Sucheintrag nicht identisch mit produktnamen sein muss
+      else Rails.env.production?
+        @products = Product.where("name ilike ?", "%#{search_term}%")
+      end
+    else
+      @products = Product.all 
+      search_term = params[:q]
+      # falls keine Suchanfrage gestartet wird, wird die Seite einfach wie immer ausgespielt
+    end
   end
+
 
   # GET /products/1
   # GET /products/1.json
