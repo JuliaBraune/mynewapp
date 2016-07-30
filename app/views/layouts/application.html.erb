@@ -21,6 +21,10 @@
 
   <body data-spy="scroll" data-target=".navbar">
 
+    <!-- flash notice tags; block will display a welcome message when sign in -->
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+
     <!-- navigation -->
     <nav class="navbar navbar-default navbar-fixed-top">
       <div class="container-fluid">
@@ -37,24 +41,28 @@
 
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="Navigationsleiste">
+          <!-- dynamic search-button -->
           <%= form_tag("/products", method: "get", class: "navbar-form navbar-left") do %>
              <%= label_tag(:q, "")%>
              <%= text_field_tag :q, nil, placeholder: "Search for", class: "form-control"%>
              <%= submit_tag("Search", class: "btn btn-default", style: "color: rgba(252, 219, 26, 0.46)")%>
           <% end %>
-
-<!-- 
-          <form class="navbar-form navbar-left">
-            <div class="form-group">
-              <input type="text" class="form-control" placeholder="Search">
-            </div>
-            <button type="submit" class="btn btn-default">Submit</button>
-          </form> -->
+          <!-- menue tabs on right site -->
           <ul class="nav navbar-nav navbar-right">
             <li><%= link_to "Home", static_pages_index_path, class: "active" %> <span class="sr-only">(current)</span></li>
             <li><%= link_to "About", static_pages_about_path %></li>
             <li><%= link_to "Contact", static_pages_contact_path %></li>
-          </ul>         
+          </ul>   
+          <!-- log in/log out sign -->
+          <ul class="nav pull-right">
+            <li>
+            <% if user_signed_in? %>
+              <%= link_to('Logout', destroy_user_session_path, :method => :delete)%>
+            <% else %>
+              <%= link_to('Login', new_user_session_path) %>
+            <% end %>
+            </li>
+          </ul> <!-- /. login/logout -->        
         </div><!-- /.navbar-collapse -->
       </div><!-- /.container-fluid -->
     </nav>
