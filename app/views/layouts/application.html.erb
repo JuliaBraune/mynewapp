@@ -21,9 +21,14 @@
 
   <body data-spy="scroll" data-target=".navbar">
 
-    <!-- flash notice tags; block will display a welcome message when sign in -->
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+    <!-- flash notice tags; block will display a welcome message when sign in / displays only if Ruby variable notice exists-->
+    <% if notice %>
+      <p id="notice" role="alert" class="alert alert-info"><%= notice %></p>
+    <% end %>
+
+    <% if alert %>
+      <p id="alert" class="alert alert-danger" role="alert"><%= alert %></p>
+    <% end %>
 
     <!-- navigation -->
     <nav class="navbar navbar-default navbar-fixed-top">

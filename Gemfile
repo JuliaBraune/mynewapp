@@ -54,3 +54,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # devise gem will be helpful for user authentication
 gem 'devise'
+
+# gem for authorization
+gem 'cancancan'
