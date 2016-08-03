@@ -21,15 +21,6 @@
 
   <body data-spy="scroll" data-target=".navbar">
 
-    <!-- flash notice tags; block will display a welcome message when sign in / displays only if Ruby variable notice exists-->
-    <% if notice %>
-      <p id="notice" role="alert" class="alert alert-info"><%= notice %></p>
-    <% end %>
-
-    <% if alert %>
-      <p id="alert" class="alert alert-danger" role="alert"><%= alert %></p>
-    <% end %>
-
     <!-- navigation -->
     <nav class="navbar navbar-default navbar-fixed-top">
       <div class="container-fluid">
@@ -54,23 +45,28 @@
           <% end %>
           <!-- menue tabs on right site -->
           <ul class="nav navbar-nav navbar-right">
-            <li><%= link_to "Home", static_pages_index_path, class: "active" %> <span class="sr-only">(current)</span></li>
-            <li><%= link_to "About", static_pages_about_path %></li>
-            <li><%= link_to "Contact", static_pages_contact_path %></li>
-          </ul>   
-          <!-- log in/log out sign -->
-          <ul class="nav pull-right">
             <li>
-            <% if user_signed_in? %>
+            <% if user_signed_in? %> <!-- login/logout -->
               <%= link_to('Logout', destroy_user_session_path, :method => :delete)%>
             <% else %>
               <%= link_to('Login', new_user_session_path) %>
             <% end %>
             </li>
-          </ul> <!-- /. login/logout -->        
+            <li><%= link_to "Home", static_pages_index_path, class: "active" %> <span class="sr-only">(current)</span></li>
+            <li><%= link_to "About", static_pages_about_path %></li>
+            <li><%= link_to "Contact", static_pages_contact_path %></li>
+          </ul>   
         </div><!-- /.navbar-collapse -->
       </div><!-- /.container-fluid -->
     </nav>
+
+    <!-- flash notice tags; block will display a welcome message when sign in / displays only if Ruby variable notice exists-->
+    <% if notice %>
+      <p id="notice" role="alert" class="alert alert-info"><%= notice %></p>
+    <% end %>
+    <% if alert %>
+      <p id="alert" class="alert alert-danger" role="alert"><%= alert %></p>
+    <% end %>
 
     <!-- content of the other pages like about, contact, products -->
     <%= yield %>
