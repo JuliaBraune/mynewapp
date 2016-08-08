@@ -1,1 +1,3 @@
-$(".alert").delay(3000).fadeOut(3000);
+$(".alert").click(function() {
+	$(".alert").delay(300).fadeOut("slow");
+});

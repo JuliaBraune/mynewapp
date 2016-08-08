@@ -1,11 +1,9 @@
-<div class="container-fluid">
-
-<!--   <form class="form-signin" style="padding:15px; margin: 0 auto; text-align: center" max-width="330px">  -->
+<div class="container-fluid" style="text-align:center">
 
     <h2>Are you new here?</h2>
     <p><strong>Please become one of us!</strong></p>
 
-    <%= form_for(resource, as: resource_name, url: registration_path(resource_name), class:"form-signin", style: "padding:15px; margin: 0 auto; text-align: center") do |f| %>
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name), class:"form-signin", style: "padding:15px; margin: 0 auto") do |f| %>
       <%= devise_error_messages! %>
 
       <div class="field">
@@ -33,7 +31,4 @@
     <% end %>
     <%= render "devise/shared/links" %>
 
-
-
-<!--   </form> -->
 </div>
