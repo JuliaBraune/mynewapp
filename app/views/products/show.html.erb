@@ -8,6 +8,7 @@
 			<%= image_tag(@product.image_url, class: "img-responsive center-block") %>
 			<p style="text-align:center"><strong><%= @product.price %></strong> <span class="glyphicon glyphicon-eur" aria-hidden="true"></span></p>
 			<!-- 	<p><%= @product.colour %></p> -->
+			<p style="text-align:center"><strong>Average Rating:</strong> <div class="rated" data-score="<%= @product.average_rating %>"></div> </p>
 			<div class="row" style="background-color:#e8adab">
 				<div class="col-xs-12 col-sm-6">
 					<p style="text-align:center"><span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span> <%= @product.highest_rating_comment %></p>
