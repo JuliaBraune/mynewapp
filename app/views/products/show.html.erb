@@ -1,24 +1,33 @@
 <div class="container-fluid main-content">
 <!-- 	<p id="notice"><%= notice %></p> -->
-
+	<h1><%= @product.name %></h1>
 	<div class="row">
-		<div class="col-xs-12">
-			<h1><%= @product.name %></h1>
-			<p style="text-align:center"><%= @product.description %></p>
+		<div class="col-xs-12 col-sm-6">
 			<%= image_tag(@product.image_url, class: "img-responsive center-block") %>
-			<p style="text-align:center"><strong><%= @product.price %></strong> <span class="glyphicon glyphicon-eur" aria-hidden="true"></span></p>
-			<!-- 	<p><%= @product.colour %></p> -->
+		</div>
+		<div class="col-xs-12 col-sm-6">
+			<p style="text-align:center"><%= @product.description %></p>
+			<p style="text-align:center"><strong><%= @product.price %></strong> <span class="glyphicon glyphicon-eur" aria-hidden="true"></span></p>		
 			<p style="text-align:center"><strong>Average Rating:</strong> <div class="rated" data-score="<%= @product.average_rating %>"></div> </p>
-			<div class="row" style="background-color:#e8adab">
-				<div class="col-xs-12 col-sm-6">
+			<%= render partial: "new_comment" %>
+		</div>
+		<div class="col-xs-12 center-block" >
+			<%= render partial: "comments" %>
+		</div>
+	</div>
+			<div class="apple_pagination"><%= will_paginate @comments %></div>
+			<%= link_to 'Edit', edit_product_path(@product) %> |
+			<%= link_to 'Back', products_path %>	
+</div>
+
+
+
+
+			<!-- 	<p><%= @product.colour %></p> -->
+
+				<!-- <div class="col-xs-12 col-sm-6">
 					<p style="text-align:center"><span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span> <%= @product.highest_rating_comment %></p>
 				</div>
 				<div class="col-xs-12 col-sm-6">
 					<p style="text-align:center"><span class="glyphicon glyphicon-thumbs-down" aria-hidden="true"></span> <%= @product.lowest_rating_comment %></p>
-				</div>
-			</div>
-			<%= link_to 'Edit', edit_product_path(@product) %> |
-			<%= link_to 'Back', products_path %>
-		</div>
-	</div>		
-</div>
+				</div> -->
