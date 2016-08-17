@@ -3,24 +3,34 @@
     <h2>Are you new here?</h2>
     <p><strong>Please become one of us!</strong></p>
 
-    <%= form_for(resource, as: resource_name, url: registration_path(resource_name), class:"form-signin", style: "padding:15px; margin: 0 auto") do |f| %>
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name), class: "form-signin", style: "padding:15px; margin: 0 auto") do |f| %>
       <%= devise_error_messages! %>
 
       <div class="field">
-        <%= f.label :email %><br />
+        <%= f.label :first_name %>
+        <%= f.text_field :first_name, autofocus: true %>
+      </div>
+
+      <div class="field">
+        <%= f.label :last_name %>
+        <%= f.text_field :last_name, autofocus: true %>
+      </div>
+
+      <div class="field">
+        <%= f.label :email %>
         <%= f.email_field :email, autofocus: true %>
       </div>
 
       <div class="field">
         <%= f.label :password %>
+        <%= f.password_field :password, autocomplete: "off" %><br>
         <% if @minimum_password_length %>
         <em>(<%= @minimum_password_length %> characters minimum)</em>
-        <% end %><br />
-        <%= f.password_field :password, autocomplete: "off" %>
+        <% end %>
       </div>
 
       <div class="field">
-        <%= f.label :password_confirmation %><br />
+        <%= f.label :password_confirmation %>
         <%= f.password_field :password_confirmation, autocomplete: "off" %>
       </div>
 
