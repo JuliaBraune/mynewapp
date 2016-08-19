@@ -31,6 +31,9 @@ gem 'jbuilder', '~> 2.5'
 # needed to run functional tests
 gem 'rails-controller-testing'
 
+#payment service tool
+gem 'stripe'
+
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

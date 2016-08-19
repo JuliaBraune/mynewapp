@@ -11,6 +11,9 @@
 			<p style="text-align:center"><%= @product.description %></p>
 			<p style="text-align:center"><strong><%= @product.price %></strong> <span class="glyphicon glyphicon-eur" aria-hidden="true"></span></p>	
 			<p style="text-align:center"><strong>Average Rating:</strong> <div class="rated" style="text-align:center" data-score="<%= @product.average_rating %>"></div> </p>
+			<%= form_tag "/payments/create" do %>
+			<%= render partial: "shared/stripe_checkout_button" %>
+			<% end %>
 		</div>
 		<div class="col-xs-12 col-sm-6">
 			<p><%= render partial: "new_comment"%></p>
