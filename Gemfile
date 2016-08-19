@@ -39,6 +39,8 @@ group :development, :test do
   gem 'sqlite3'
   # use rspec to test your code
   gem 'rspec-rails', '~> 3.5'
+  # Use FactoryGirl in Rails to replace default fixtures while running test files
+  gem "factory_girl_rails", "~> 4.0"
 end
 
 group :development do

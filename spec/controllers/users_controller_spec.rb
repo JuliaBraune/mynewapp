@@ -2,7 +2,8 @@ require 'rails_helper'
 
 describe UsersController, :type => :controller do # functional test file for users_controller.rb
 	before do
-		@user = User.create!(email: "jul.br@gmx.net", password: "asdfghjkl")
+		# @user = User.create!(email: "jul.br@gmx.net", password: "asdfghjkl") # wird ersetzt durch FactoryGirl
+		@user = FactoryGirl.create(:user)
 		@second_user = User.create!(email: "j-b@gmx.de", password: "1234567")
 
 	end
