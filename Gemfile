@@ -34,6 +34,9 @@ gem 'rails-controller-testing'
 #payment service tool
 gem 'stripe'
 
+#brakeman scanner for security check
+gem "brakeman", :require => false
+
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -71,3 +74,9 @@ gem 'cancancan'
 
 # gem for pagination
 gem 'will_paginate', '~> 3.1.0'
+
+# gem for reCaptcha API key / security vs bots
+gem 'dotenv-rails', :require => 'dotenv/rails-now' #gem for recaptcha for dev env
+gem "recaptcha", require: "recaptcha/rails"
+
+
