@@ -1,0 +1,10 @@
+// to hide the comment form after creating a new  comment
+// $('#new_comment').hide(); 
+
+$('#new_comment').html("Thank you for your review!");
+
+// show the newly created comment in the comment section without reloading the page
+$('.product-reviews').prepend("<%= j render @comment%>");
+
+javascript
+$('#average-rating').attr('data-score', "<%= @product.average_rating %>");

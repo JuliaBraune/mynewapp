@@ -1,4 +1,4 @@
-$(document).on('turbolinks:load', function(){ 
+var refreshRating = function(){ 
 	$('.rating').raty( { path: '/assets', scoreName: 'comment[rating]' }); //specified where the image assets are found
 	$('.rated').raty( {path: '/assets',
 		readOnly: true,
@@ -6,6 +6,11 @@ $(document).on('turbolinks:load', function(){
 			return $(this).attr('data-score');
 		}
 	});
+};
+
+$(document).on('turbolinks:load ajaxSuccess', function() {
+	refreshRating();
+
 	// jQuery for elevateZoom-JS
 	$('.img-zoom').elevateZoom({
 		zoomType: "lens",

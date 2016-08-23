@@ -10,7 +10,7 @@
 		<div class="col-xs-12 col-sm-6">
 			<p style="text-align:center"><%= @product.description %></p>
 			<p style="text-align:center"><strong><%= @product.price %></strong> <span class="glyphicon glyphicon-eur" aria-hidden="true"></span></p>	
-			<p style="text-align:center"><strong>Average Rating:</strong> <div class="rated" style="text-align:center" data-score="<%= @product.average_rating %>"></div> </p>
+			<p style="text-align:center"><strong>Average Rating:</strong> <div id="average-rating" class="rated" style="text-align:center" data-score="<%= @product.average_rating %>"></div> </p>
 			<%= form_tag "/payments/create" do %>
 			<%= render partial: "shared/stripe_checkout_button" %>
 			<%= hidden_field_tag(:product_id, @product.id) %>
