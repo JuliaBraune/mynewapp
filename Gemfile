@@ -79,4 +79,6 @@ gem 'will_paginate', '~> 3.1.0'
 gem 'dotenv-rails', :require => 'dotenv/rails-now' #gem for recaptcha for dev env
 gem "recaptcha", require: "recaptcha/rails"
 
+# add gem for Memcachier
+gem 'dalli'
 

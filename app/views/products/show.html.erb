@@ -1,11 +1,14 @@
 <div class="container-fluid main-content">
 <!-- 	<p id="notice"><%= notice %></p> -->
-	<h1><%= @product.name %></h1>
-	<div class="row">
-		<div class="col-xs-12">
-			<%= image_tag(@product.image_url, class: 'img-responsive center-block img-zoom', data_zoom_image: @product.image_url) %>
+<!-- 	<% cache @product do %> -->
+
+		<h1><%= @product.name %></h1>
+		<div class="row">
+			<div class="col-xs-12">
+				<%= image_tag(@product.image_url, class: 'img-responsive center-block img-zoom', data_zoom_image: @product.image_url) %>
+			</div>
 		</div>
-	</div>
+<!-- 	<% end %> -->
 	<div class="row">
 		<div class="col-xs-12 col-sm-6">
 			<p style="text-align:center"><%= @product.description %></p>
