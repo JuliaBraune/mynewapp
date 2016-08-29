@@ -82,3 +82,5 @@ gem "recaptcha", require: "recaptcha/rails"
 # add gem for Memcachier
 gem 'dalli'
 
+# add redis gem
+gem 'redis-rails'
