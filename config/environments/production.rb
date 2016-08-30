@@ -95,4 +95,8 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+
+  # allow ActionCable requests on production (by default they are not allowed – task 6.13.)
+  config.web_socket_server_url = "wss://polycarp-app.herokuapp.com/cable"
+  config.action_cable.allowed_request_origins = ['https://polycarp-app.herokuapp.com', 'http://polycarp-app.herokuapp.com']
 end
