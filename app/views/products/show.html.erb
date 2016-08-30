@@ -19,6 +19,9 @@
 			<%= hidden_field_tag(:product_id, @product.id) %>
 			<% end %>
 		</div>
+		<div class="alert alert-info" style="display:none" role="alert">
+			A new comment was posted!
+		</div>
 		<div class="col-xs-12 col-sm-6">
 			<p><%= render partial: "new_comment"%></p>
 		</div>
