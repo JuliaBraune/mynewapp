@@ -7,8 +7,12 @@
     <p><%= product.colour %></p>
     <ul style="list-style: none">            
       <li><%= link_to 'Show', product %></li>
+      <% if can? :edit, @product %>
       <li><%= link_to 'Edit', edit_product_path(product) %></li>
+      <%end%>
+      <% if can? :delete, @product %>
       <li><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></li>
+      <%end%>
     </ul>
   </div> <!-- /col -->
 <% end %>
