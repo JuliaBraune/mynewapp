@@ -47,6 +47,8 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.5'
   # Use FactoryGirl in Rails to replace default fixtures while running test files
   gem "factory_girl_rails", "~> 4.0"
+  # Use shoulda matchers to test rails much easier
+  gem 'shoulda-matchers', '~> 3.0'
 end
 
 group :development do

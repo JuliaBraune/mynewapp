@@ -1,5 +1,5 @@
 class PaymentsController < ApplicationController
-	before_filter :authenticate_user!
+	before_action :authenticate_user!
 
 	# Get the credit card details submitted by the form
 	def create

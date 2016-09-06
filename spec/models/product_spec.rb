@@ -16,4 +16,9 @@ describe Product do
 			expect(Product.new(description: "nice vinyl")).not_to be_valid # a product without a name
 		end
 	end
+
+	it {should have_many(:comments)}
+	it {should have_many(:orders)}
+
+
 end

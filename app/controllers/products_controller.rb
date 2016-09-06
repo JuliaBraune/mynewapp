@@ -5,7 +5,6 @@ class ProductsController < ApplicationController
   # GET /products
   # GET /products.json
   def index
-    # byebug
     if params[:q]
       search_term = params[:q] # return our filtered list here
       if Rails.env.development?
@@ -17,7 +16,7 @@ class ProductsController < ApplicationController
       end
     else
       @products = Product.all 
-      search_term = params[:q]
+      # search_term = params[:q]
       # falls keine Suchanfrage gestartet wird, wird die Seite einfach wie immer ausgespielt
     end
   end
