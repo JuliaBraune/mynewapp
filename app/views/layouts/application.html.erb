@@ -39,9 +39,9 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="Navigationsleiste">
           <!-- dynamic search-button -->
-          <%= form_tag("/products", method: "get", class: "navbar-form navbar-left") do %>
+          <%= form_tag("/products", method: "get", class: "form-group navbar-form navbar-left") do %>
              <%= label_tag(:q, "")%>
-             <%= text_field_tag :q, nil, placeholder: "Search for", class: "form-control"%>
+             <%= text_field_tag(:q, params[:q], placeholder: "Search for", class: "form-control")%>
              <%= submit_tag("Search", class: "btn btn-default", style: "color: rgba(252, 219, 26, 0.46)")%>
           <% end %>
           <!-- menue tabs on right site -->
